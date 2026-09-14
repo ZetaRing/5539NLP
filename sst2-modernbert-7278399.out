@@ -1,0 +1,91 @@
+Sun Sep 13 19:55:18 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.95.05              Driver Version: 580.95.05      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          On  |   00000000:25:00.0 Off |                    0 |
+| N/A   25C    P0             37W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  51%|█████▏    | 70/136 [00:00<00:00, 692.24it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 842.23it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.weight | MISSING    | 
+classifier.bias   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+trainable params: 592,130
+epoch  1  train=0.8061  dev=0.7972
+epoch  2  train=0.8064  dev=0.7945
+epoch  3  train=0.7965  dev=0.7907
+epoch  4  train=0.8129  dev=0.8037
+epoch  5  train=0.8158  dev=0.8082
+epoch  6  train=0.8179  dev=0.8020
+epoch  7  train=0.8122  dev=0.8014
+epoch  8  train=0.8203  dev=0.8076
+epoch  9  train=0.8219  dev=0.8088
+epoch 10  train=0.8252  dev=0.8103
+epoch 11  train=0.8315  dev=0.8159
+epoch 12  train=0.8265  dev=0.8076
+epoch 13  train=0.8300  dev=0.8147
+epoch 14  train=0.8252  dev=0.8079
+epoch 15  train=0.8395  dev=0.8192
+epoch 16  train=0.8402  dev=0.8192
+epoch 17  train=0.8428  dev=0.8239
+epoch 18  train=0.8459  dev=0.8233
+epoch 19  train=0.8403  dev=0.8180
+epoch 20  train=0.8460  dev=0.8216
+epoch 21  train=0.8506  dev=0.8263
+epoch 22  train=0.8483  dev=0.8257
+epoch 23  train=0.8518  dev=0.8254
+epoch 24  train=0.8523  dev=0.8257
+epoch 25  train=0.8536  dev=0.8302
+epoch 26  train=0.8537  dev=0.8266
+epoch 27  train=0.8536  dev=0.8272
+epoch 28  train=0.8535  dev=0.8266
+epoch 29  train=0.8538  dev=0.8311
+epoch 30  train=0.8545  dev=0.8296
+
+best dev = 0.8311  ->  test (GLUE validation) = 0.8303
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 10115.00it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.bias   | MISSING    | 
+classifier.weight | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+trainable params: 609,794 || all params: 150,216,196 || trainable%: 0.4059
+epoch 1 step   500  loss=0.2157  train=0.9048  dev=0.9068
+epoch 1 step  1000  loss=0.3068  train=0.9264  dev=0.9139
+epoch 1 step  1500  loss=0.1469  train=0.9442  dev=0.9365
+epoch 1 step  2000  loss=0.0956  train=0.9498  dev=0.9365
+epoch 2 step  2500  loss=0.0675  train=0.9536  dev=0.9427
+epoch 2 step  3000  loss=0.2010  train=0.9570  dev=0.9394
+epoch 2 step  3500  loss=0.0673  train=0.9636  dev=0.9445
+epoch 2 step  4000  loss=0.0596  train=0.9702  dev=0.9442
+epoch 3 step  4500  loss=0.2162  train=0.9752  dev=0.9471
+epoch 3 step  5000  loss=0.1254  train=0.9756  dev=0.9504
+epoch 3 step  5500  loss=0.0943  train=0.9794  dev=0.9480
+epoch 3 step  6000  loss=0.0341  train=0.9792  dev=0.9486
+
+best dev = 0.9504  ->  test (GLUE validation) = 0.9438

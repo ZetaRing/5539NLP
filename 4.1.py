@@ -17,7 +17,7 @@ DEV = "cuda" if torch.cuda.is_available() else "cpu"
 
 def load_splits():
     """GLUE SST-2 test labels are hidden, so: train -> train/dev (95/5), GLUE validation -> test."""
-    ds = load_dataset("glue", "sst2")
+    ds = load_dataset("nyu-mll/glue", "sst2")
     split = ds["train"].train_test_split(test_size=0.05, seed=SEED)
     return {"train": split["train"], "dev": split["test"], "test": ds["validation"]}
 

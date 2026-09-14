@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --job-name=sst2-modernbert
-#SBATCH --account=PAS3389
+#SBATCH --account=PAS2836
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=1
 #SBATCH --cpus-per-task=8
-#SBATCH --time=02:00:00
+#SBATCH --time=01:00:00
 #SBATCH --output=%x-%j.out
 
 cd "$SLURM_SUBMIT_DIR"
